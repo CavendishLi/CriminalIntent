@@ -1,19 +1,20 @@
 package com.dagna.android.criminalintent;
 
+import java.util.Date;
 import java.util.UUID;
 
 /**
- * Created by Joker-Dagna on 2015/6/25.
+ * Created by user on 15-6-24.
  */
 public class Crime {
     private UUID mId;
     private String mTitle;
-    public Crime(){
-        mId = UUID.randomUUID();
-    }
+    private Date mDate;
+    private boolean mSolved;
 
-    public UUID getId() {
-        return mId;
+    public Crime() {
+        mId = UUID.randomUUID();
+        mDate = new Date();
     }
 
     public String getTitle() {
@@ -22,5 +23,30 @@ public class Crime {
 
     public void setTitle(String title) {
         mTitle = title;
+    }
+
+    public UUID getId() {
+        return mId;
+    }
+
+    public Date getDate() {
+        return mDate;
+    }
+
+    public void setDate(Date date) {
+        mDate = date;
+    }
+
+    public boolean isSolved() {
+        return mSolved;
+    }
+
+    public void setSolved(boolean solved) {
+        mSolved = solved;
+    }
+
+    @Override
+    public String toString() {
+        return mTitle;
     }
 }
